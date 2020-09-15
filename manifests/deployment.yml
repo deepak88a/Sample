@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "accelerateshopping-a57a"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "accelerateshopping-a57a"
+  template:
+    metadata:
+      labels:
+        app: "accelerateshopping-a57a"
+    spec:
+      containers:
+        - name: "accelerateshopping-a57a"
+          image: "accelerateshopping.azurecr.io/accelerateshopping"
+          ports:
+          - containerPort: 8080
